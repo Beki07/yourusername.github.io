@@ -2,7 +2,7 @@ body{
 font-family: Arial, sans-serif;
 margin:0; padding:0; background:#f7f7f8; color:#222;
 }
-header{background:#0066cc; color:white; padding:30px; text-align:center}
+header{background:rgb(0, 153, 187); color:white; padding:30px; text-align:center}
 main{max-width:900px; margin:30px auto; padding:20px}
 section{margin-bottom:24px}
 footer{background:#111; color:white; text-align:center; padding:12px}
