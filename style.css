@@ -1,18 +1,32 @@
 /* General body styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f7f7f8;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   color: #222;
 }
 
 /* Header */
 header {
-  background: rgb(0, 153, 187);
+  background: linear-gradient(135deg, #0099bb 0%, #006688 100%);
   color: white;
-  padding: 30px;
+  padding: 40px 30px;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 10px 0;
+  font-size: 2.5em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin: 10px 0;
+  font-size: 1.1em;
+  opacity: 0.95;
 }
 
 /* Hamburger menu button */
@@ -21,17 +35,20 @@ header {
   top: 15px;
   left: 15px;
   z-index: 2000;
-  background: rgb(0, 153, 187);
+  background: linear-gradient(135deg, #0099bb 0%, #006688 100%);
   color: white;
-  border: none;
+  border: 2px solid white;
   font-size: 28px;
   padding: 10px 15px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .menu-toggle:hover {
-  background: #005577;
+  background: linear-gradient(135deg, #006688 0%, #004455 100%);
+  transform: scale(1.05);
 }
 
 /* Navigation menu (hidden by default) */
@@ -45,7 +62,8 @@ header {
   transition: left 0.3s ease;
   z-index: 1999;
   padding-top: 60px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
 }
 
 /* Show menu when active */
@@ -69,23 +87,70 @@ header {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .nav-menu ul li a:hover {
-  background: #f0f0f0;
-  color: rgb(0, 153, 187);
+  background: linear-gradient(90deg, #0099bb 0%, #006688 100%);
+  color: white;
+  padding-left: 30px;
 }
 
-/* Header */
+/* Main content */
 main {
   max-width: 900px;
   margin: 30px auto;
   padding: 20px;
 }
 
+/* Section titles with floating circles */
+section h2 {
+  background: linear-gradient(135deg, #0099bb 0%, #006688 100%);
+  color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  font-size: 1.8em;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 153, 187, 0.3);
+  text-align: center;
+  padding: 0;
+  line-height: 1.4;
+  animation: float 3s ease-in-out infinite;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 section {
-  margin-bottom: 24px;
+  margin-bottom: 40px;
+}
+
+section p, section ul {
+  font-size: 1.05em;
+  line-height: 1.8;
+  color: #333;
+}
+
+section ul {
+  padding-left: 20px;
+}
+
+section ul li {
+  margin: 15px 0;
+  padding-left: 10px;
 }
 
 /* Profile image: perfect circle */
@@ -96,24 +161,65 @@ section {
   object-fit: cover;
   display: block;
   margin: 12px auto;
-  border: 3px solid #0099bb; /* optional border to make it pop */
+  border: 5px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile:hover {
+  transform: scale(1.05);
 }
 
 /* Project and certificate images */
 .project img, .certificate img {
   display: block;
   margin: 10px auto;
-  border: 2px solid #333;
+  border: 2px solid #0099bb;
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 footer {
-  background: #111;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   color: white;
   text-align: center;
-  padding: 12px;
-  margin-top: 40px;
+  padding: 30px 20px;
+  margin-top: 60px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
+footer p {
+  margin: 10px 0;
+  font-size: 0.95em;
+}
+
+footer a {
+  color: #0099bb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #00ccff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  section h2 {
+    width: 250px;
+    height: 250px;
+    font-size: 1.4em;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  main {
+    padding: 10px;
+  }
+}
