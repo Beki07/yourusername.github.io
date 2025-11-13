@@ -89,15 +89,37 @@
 </body>
 
 <script>
+  // Hide all sections by default
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('section').forEach(section => {
+      section.style.display = 'none';
+    });
+  });
+
   // Toggle menu visibility
   document.getElementById('menu-toggle').addEventListener('click', function() {
     const navMenu = document.getElementById('nav-menu');
     navMenu.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
+  // Show section when a menu link is clicked
   document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Hide all sections
+      document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Show the clicked section
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.style.display = 'block';
+      }
+      
+      // Close the menu
       document.getElementById('nav-menu').classList.remove('active');
     });
   });
