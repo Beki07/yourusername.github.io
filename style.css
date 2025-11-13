@@ -1,18 +1,85 @@
-body{
-font-family: Arial, sans-serif;
-margin:0; padding:0; background:#f7f7f8; color:#222;
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f8;
+  color: #222;
 }
-header{background:rgb(0, 153, 187); color:white; padding:30px; text-align:center}
-main{max-width:900px; margin:30px auto; padding:20px}
-section{margin-bottom:24px}
-footer{background:#111; color:white; text-align:center; padding:12px}
 
-/* Profile image: fixed square, cropped to circle */
-.profile{
-	width:200px;
-	height:200px;
-	border-radius:50%;
-	object-fit:cover;
-	display:block;
-	margin:12px auto;
+/* Header */
+header {
+  background: rgb(0, 153, 187);
+  color: white;
+  padding: 30px;
+  text-align: center;
 }
+
+/* Navigation bar */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  background-color: #0099bb;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: yellow;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Main content */
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+/* Profile image: perfect circle */
+.profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 12px auto;
+  border: 3px solid #0099bb; /* optional border to make it pop */
+}
+
+/* Project and certificate images */
+.project img, .certificate img {
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #333;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 40px;
+}
+
