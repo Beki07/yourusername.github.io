@@ -101,6 +101,11 @@ main {
   max-width: 900px;
   margin: 30px auto;
   padding: 20px;
+  background: #000000;
+}
+
+html {
+  background: #000000;
 }
 
 /* Section titles with floating circles */
