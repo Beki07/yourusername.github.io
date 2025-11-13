@@ -15,35 +15,69 @@ header {
   text-align: center;
 }
 
-/* Navigation bar */
-nav ul {
+/* Hamburger menu button */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2000;
+  background: rgb(0, 153, 187);
+  color: white;
+  border: none;
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.menu-toggle:hover {
+  background: #005577;
+}
+
+/* Navigation menu (hidden by default) */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100vh;
+  background: white;
+  transition: left 0.3s ease;
+  z-index: 1999;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Show menu when active */
+.nav-menu.active {
+  left: 0;
+}
+
+.nav-menu ul {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px 0;
-  background-color: #0099bb;
+  padding: 0;
   margin: 0;
 }
 
-nav ul li a {
+.nav-menu ul li {
+  border-bottom: 1px solid #eee;
+}
+
+.nav-menu ul li a {
+  display: block;
+  padding: 15px 20px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.2s;
 }
 
-nav ul li a:hover {
-  color: yellow;
+.nav-menu ul li a:hover {
+  background: #f0f0f0;
+  color: rgb(0, 153, 187);
 }
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Main content */
+/* Header */
 main {
   max-width: 900px;
   margin: 30px auto;

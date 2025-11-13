@@ -4,27 +4,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<header>
-  <nav>
-    <ul style="list-style:none; display:flex; justify-content:center; gap:30px; padding:20px 0; background-color:#0b5; margin:0;">
-      <li><a href="#home" style="text-decoration:none; color:white;">Home</a></li>
-      <li><a href="#about" style="text-decoration:none; color:white;">About</a></li>
-      <li><a href="#resume" style="text-decoration:none; color:white;">Resume</a></li>
-      <li><a href="#projects" style="text-decoration:none; color:white;">Portfolio</a></li>
-      <li><a href="#contact" style="text-decoration:none; color:white;">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
 <title>Belkis Akaichi | Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header style="background:#0066cc;">
-<h1>Belkis Akaichi</h1>
-<img src="DSC_6827a.jpg" alt="Belkis Akaichi" style="width:200px; height:200px; border-radius:50%;">
-<p>Mechanical Engineer • Robotics • AI Enthusiast</p>
-</header>
+  <!-- Hamburger Menu Button -->
+  <button id="menu-toggle" class="menu-toggle">☰</button>
+  
+  <!-- Navigation bar (hidden by default) -->
+  <nav id="nav-menu" class="nav-menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#projects">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Belkis Akaichi</h1>
+    <img src="DSC_6827a.jpg" alt="Belkis Akaichi" style="width:200px; height:200px; border-radius:50%;">
+    <p>Mechanical Engineer • Robotics • AI Enthusiast</p>
+  </header>
 
 
 <main>
@@ -75,13 +78,28 @@
 
 </main>
 
-
-<footer style="text-align:center; padding:20px; background-color:#f2f2f2; margin-top:40px;">
-  <p>Contact me: 
-    <a href="mailto:belkisakaichi@gmail.com">belkisakaichi@gmail.com</a> | 
-    <a href="https://github.com/belkisakaichi" target="_blank" rel="noopener">GitHub</a>
-  </p>
-  <p>&copy; 2025 Belkis Akaichi</p>
-</footer>
+  <footer style="text-align:center; padding:20px; background-color:#f2f2f2; margin-top:40px;">
+    <p>Contact me: 
+      <a href="mailto:belkisakaichi@gmail.com">belkisakaichi@gmail.com</a> | 
+      <a href="https://github.com/belkisakaichi" target="_blank" rel="noopener">GitHub</a>
+    </p>
+    <p>&copy; 2025 Belkis Akaichi</p>
+  </footer>
 </body>
+
+<script>
+  // Toggle menu visibility
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.remove('active');
+    });
+  });
+</script>
+
 </html>
